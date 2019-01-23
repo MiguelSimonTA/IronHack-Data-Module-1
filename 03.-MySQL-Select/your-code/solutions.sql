@@ -1,3 +1,4 @@
+# Database
 USE publications;
 
 # Challenge 1
@@ -26,7 +27,6 @@ GROUP BY AuthorID
 ORDER BY Total DESC, AuthorID DESC
 LIMIT 3;
 
-
 # Challenge 4
 SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, IFNULL(SUM(s.qty),0)  AS Total
 FROM publications.authors a
@@ -34,3 +34,13 @@ LEFT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
 LEFT JOIN publications.sales s ON s.title_id = ta.title_id
 GROUP BY AuthorID
 ORDER BY Total DESC, AuthorID DESC;
+
+# Bonus Challenge - Most Profiting Authors
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName,
+ROUND(SUM((t.advance * ta.royaltyper / 100) + (t.price * ytd_sales * t.royalty / 100 * ta.royaltyper / 100)),2) AS Profit
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.titles t ON t.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Profit DESC
+LIMIT 3;
