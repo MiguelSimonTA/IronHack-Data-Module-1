@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>colorIndex</key>
+			<integer>0</integer>
+			<key>database</key>
+			<string>publications</string>
+			<key>host</key>
+			<string>127.0.0.1</string>
+			<key>kcid</key>
+			<string>-837145818238816112</string>
+			<key>name</key>
+			<string>localhost</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>root</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentFilterV2</key>
+			<dict>
+				<key>children</key>
+				<array/>
+				<key>filterClass</key>
+				<string>groupNode</string>
+				<key>isConjunction</key>
+				<true/>
+			</dict>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoK8QDwcIFRYXGBkfICEoLDA0OFUkbnVs
+			bNMJCgsMEBRXTlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6MNDg+A
+			AoADgASjERITgAWABoAKgA5UdHlwZVRyb3dzVGtleXNfECZTZWxl
+			Y3Rpb25EZXRhaWxUeXBlUHJpbWFyeUtleWVkRGV0YWlsc9MJCgsa
+			HB6hG4AHoR2ACIAJVlBTMTM3MgnSIiMkJVokY2xhc3NuYW1lWCRj
+			bGFzc2VzXxATTlNNdXRhYmxlRGljdGlvbmFyeaMkJidcTlNEaWN0
+			aW9uYXJ5WE5TT2JqZWN00goLKSuhKoALgA3SCy0uL1lOUy5zdHJp
+			bmeADFh0aXRsZV9pZNIiIzEyXxAPTlNNdXRhYmxlU3RyaW5nozEz
+			J1hOU1N0cmluZ9IiIzU2Xk5TTXV0YWJsZUFycmF5ozU3J1dOU0Fy
+			cmF50iIjJjmiJidfEA9OU0tleWVkQXJjaGl2ZXLRPD1UZGF0YYAB
+			AAgAEQAaACMALQAyADcASQBPAFYAXgBpAHAAdAB2AHgAegB+AIAA
+			ggCEAIYAiwCQAJUAvgDFAMcAyQDLAM0AzwDWANcA3ADnAPABBgEK
+			ARcBIAElAScBKQErATABOgE8AUUBSgFcAWABaQFuAX0BgQGJAY4B
+			kQGjAaYBqwAAAAAAAAIBAAAAAAAAAD4AAAAAAAAAAAAAAAAAAAGt
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1067, 669}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>
+# Challenge 4
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+LEFT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+LEFT JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC</string>
+			<key>table</key>
+			<string>titles</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>214</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string># Challenge 4
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+RIGHT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+RIGHT JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC</string>
+		<string># Challenge 4
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+LEFT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+LEFT JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC</string>
+		<string># Challenge 4
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+RIGHT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC</string>
+		<string># Challenge 4
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+LEFT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC</string>
+		<string># Challenge 4
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, COUNT(t.title_id) AS TitleCount, p.pub_name AS Publisher
+FROM publications.authors a
+LEFT JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.titles t ON ta.title_id = t.title_id
+INNER JOIN publications.publishers p ON p.pub_id = t.pub_id
+GROUP BY p.pub_name, a.au_id</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, COUNT(t.title_id) AS TitleCount, p.pub_name AS Publisher
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.titles t ON ta.title_id = t.title_id
+INNER JOIN publications.publishers p ON p.pub_id = t.pub_id
+GROUP BY p.pub_name, a.au_id</string>
+		<string>SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC
+LIMIT 3</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC
+LIMIT 30</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC, AuthorID DESC
+LIMIT 5</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC
+LIMIT 5</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC
+LIMIT 3</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+LIMIT 3</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+ORDER BY Total DESC
+LIMIT 3</string>
+		<string>SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.titles_id
+ORDER BY Total DESC
+LIMIT 3</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC</string>
+		<string>SUM(</string>
+		<string>GROUP BY AuthorID
+ORDER BY Total DESC</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id</string>
+		<string># Challenge 3
+SELECT a.au_id AS AuthorID, a.au_lname AS LastName, a.au_fname AS FirstName, SUM(s.qty) AS Total
+FROM publications.authors a
+INNER JOIN publications.titleauthor ta ON ta.au_id = a.au_id
+INNER JOIN publications.sales s ON s.title_id = ta.title_id
+GROUP BY AuthorID
+ORDER BY Total DESC
+LIMIT 23</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>8.0.13</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
