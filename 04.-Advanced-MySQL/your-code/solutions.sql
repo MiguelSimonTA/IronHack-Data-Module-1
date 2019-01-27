@@ -35,7 +35,6 @@ ORDER BY Profit DESC
 LIMIT 3;
 
 # Challenge 2 - Alternative Solution
-
 ## Step 3
 SELECT apa.AuthorID, ROUND(TotalRoyalty + TotalAdvance,2) AS Profit
 FROM (
