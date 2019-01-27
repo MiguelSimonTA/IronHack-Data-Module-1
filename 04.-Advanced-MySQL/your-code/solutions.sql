@@ -37,3 +37,7 @@ LIMIT 3;
 # Challenge 2 - Alternative Solution
 
 # Challenge 3 - Create A Permanent Table Of The Most Profiting Authors
+CREATE TABLE publications.most_profiting_authors
+SELECT apa.AuthorID, ROUND(TotalRoyalty + TotalAdvance,2) AS Profit
+FROM royalty_per_author rpa
+INNER JOIN publications.advance_per_author apa ON apa.AuthorID = rpa.AuthorID;
